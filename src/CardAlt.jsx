@@ -14,7 +14,12 @@ const Card = (props) => {
     <>
       <div className="col-sm-4 text-center card_wrapper">
         <img src={props.imgSrc} alt={props.name} className="img-fluid" />
-        <div className="overlay">
+        <div className="px-md-3">
+          <h4>{props.name}</h4>
+          {props.level && props.tech !== "issues" ? (
+            <p>{`Level : ${props.level} ; Project : ${props.pNo} `}</p>
+          ) : null}
+          {props.tech === "issues" ? <p>{`${props.level}`}</p> : null}
           <div className="btn-group text-center">
             {/* eslint-disable-next-line*/}
             {props.tech === "home" ? (
@@ -34,13 +39,6 @@ const Card = (props) => {
               </a>
             )}
           </div>
-        </div>
-        <div className="px-md-3">
-          <h4>{props.name}</h4>
-          {props.level && props.tech !== "issues" ? (
-            <p>{`Level : ${props.level} ; Project : ${props.pNo} `}</p>
-          ) : null}
-          {props.tech === "issues" ? <p>{`${props.level}`}</p> : null}
         </div>
       </div>
     </>

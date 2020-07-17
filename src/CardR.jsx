@@ -1,8 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import Data from "./Data1";
-import Menu from "./Menu";
-import { useLocation } from "react-router-dom";
+import { useLocation, Redirect } from "react-router-dom";
 
 const checkRoutes = (route) => {
   const routes = ["/", "/scratch", "/appinv", "/issues", "/webdev", "/vr"];
@@ -31,7 +30,7 @@ const CardR = (props) => {
                     />
                   );
                 } else if (checkRoutes(location.pathname) === false) {
-                  return <Menu tech="home" />;
+                  return <Redirect to="/" />;
                 }
               })
             : null}
