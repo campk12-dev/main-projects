@@ -16,9 +16,9 @@ const Card = (props) => {
         <img src={props.imgSrc} alt={props.name} className="img-fluid" />
         <div className="overlay">
           <div className="btn-group text-center">
-            {/* eslint-disable-next-line*/}
             {props.tech === "home" ? (
-              <a rel="noopener noreferrer">
+              // eslint-disable-next-line
+              <a>
                 <Button
                   onClick={() => {
                     history.push(`/${props.techName}`);
