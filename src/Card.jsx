@@ -13,12 +13,34 @@ const Card = (props) => {
   return (
     <>
       <div className="col-sm-4 text-center card_wrapper">
-        <img src={props.imgSrc} alt={props.name} className="img-fluid" />
-        <div className="overlay">
-          <div className="btn-group text-center">
-            {props.tech === "home" ? (
-              // eslint-disable-next-line
-              <a>
+        {props.tech === "home" ? (
+          // eslint-disable-next-line
+          <a>
+            <img
+              onClick={() => {
+                history.push(`/${props.techName}`);
+              }}
+              src={props.imgSrc}
+              alt={props.name}
+              className="img-fluid"
+            />
+          </a>
+        ) : (
+          <a rel="noopener noreferrer" target="_blank" href={props.url}>
+            <img src={props.imgSrc} alt={props.name} className="img-fluid" />
+          </a>
+        )}
+
+        {props.tech === "home" ? (
+          // eslint-disable-next-line
+          <a>
+            <div
+              className="overlay"
+              onClick={() => {
+                history.push(`/${props.techName}`);
+              }}
+            >
+              <div className="btn-group text-center">
                 <Button
                   onClick={() => {
                     history.push(`/${props.techName}`);
@@ -27,14 +49,19 @@ const Card = (props) => {
                 >
                   View Projects
                 </Button>
-              </a>
-            ) : (
-              <a rel="noopener noreferrer" target="_blank" href={props.url}>
+              </div>
+            </div>
+          </a>
+        ) : (
+          <a rel="noopener noreferrer" target="_blank" href={props.url}>
+            <div className="overlay">
+              <div className="btn-group text-center">
                 <Button style={buttonCSS}>View the Project</Button>
-              </a>
-            )}
-          </div>
-        </div>
+              </div>
+            </div>
+          </a>
+        )}
+
         <div className="px-md-3">
           <h4>{props.name}</h4>
           {props.level && props.tech !== "issues" ? (
