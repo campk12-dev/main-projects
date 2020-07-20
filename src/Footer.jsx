@@ -15,6 +15,14 @@ const Footer = () => {
           >
             Web Wolf
           </a>
+          &nbsp;and&nbsp;
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/archit-gupta-346b6612b/"
+          >
+            Arch
+          </a>
           🔥
         </p>
       </footer>
