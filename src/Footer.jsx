@@ -1,5 +1,9 @@
 import React from "react";
 
+const linkText = {
+  color: "#F4F6F7",
+};
+
 const Footer = () => {
   return (
     <>
@@ -9,6 +13,7 @@ const Footer = () => {
           🌿 Copyright © {new Date().getFullYear()} | CampK12 | Maintained
           by&nbsp;
           <a
+            style={linkText}
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/kapil-d"
@@ -17,6 +22,7 @@ const Footer = () => {
           </a>
           &nbsp;and&nbsp;
           <a
+            style={linkText}
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/archit-gupta-346b6612b/"
